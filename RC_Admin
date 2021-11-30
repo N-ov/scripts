@@ -32,14 +32,11 @@ if not RCA.executed then
     end
     
     local function RunCommand(msg)
-        print('running command')
         if msg:sub(1, #RCA.Prefix) == RCA.Prefix then
-            print('matches prefix')
             local command = msg:split(' ')[1]:gsub(RCA.Prefix, '')
-            print(msg:split(' ')[2])
             local target = FindPlayer(msg:split(' ')[2])
             
-            if rawget(RCA.Commands, command) then
+            if rawget(RCA.Commands, command) and target then
                 print('launching')
                 RCA.Commands[command](target) 
             end
