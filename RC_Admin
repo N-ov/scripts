@@ -1,4 +1,4 @@
-getgenv().RCA = RCA or getgenv().RCA = {
+getgenv().RCA = {
     Prefix = ':'
 }
 
